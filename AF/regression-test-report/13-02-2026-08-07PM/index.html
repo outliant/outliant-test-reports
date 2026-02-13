@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Meta vs Schema Comparison - @META-CONTENT-CHECK</title>
+<style>
+  body { font-family: system-ui, Arial; padding: 20px; margin: 0; overflow-x: hidden; }
+  h1, h2 { color: #222; margin: 0 0 10px; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+    table-layout: fixed;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+    font-size: 12px;
+    text-align: left;
+    vertical-align: top;
+    white-space: normal;
+  }
+  th {
+    background: #f3f3f3;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  tr:nth-child(even) { background: #fafafa; }
+  a { color: #1a73e8; text-decoration: none; }
+  td a:hover { text-decoration: underline; }
+
+  th:nth-child(1) { width: 12%; }
+  th:nth-child(2) { width: 4%; }
+  th:nth-child(3) { width: 6%; }
+  th:nth-child(4), th:nth-child(5) { width: 10%; }
+  th:nth-child(6) { width: 7%; }
+  th:nth-child(7), th:nth-child(8) { width: 12%; }
+  th:nth-child(9) { width: 7%; }
+  th:nth-child(10), th:nth-child(11) { width: 10%; }
+  th:nth-child(12) { width: 7%; }
+  th:nth-child(13) { width: 4%; }
+
+  .highlight-col {
+    background-color: #e8f4ff !important;
+    font-weight: 600;
+    border-left: 2px solid #2196f3;
+    border-right: 2px solid #2196f3;
+  }
+
+  .summary {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+  }
+  .summary h2 { margin-top: 0; font-size: 16px; }
+  .summary-table {
+    border-collapse: collapse;
+    width: auto;
+    font-size: 13px;
+    margin-top: 10px;
+  }
+  .summary-table th, .summary-table td {
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    text-align: center;
+  }
+  .summary-table th { background: #eee; }
+
+  @media print {
+    body { zoom: 0.9; }
+  }
+</style>
+</head>
+<body>
+  <h1>Meta, Description & Headline Comparison Report</h1>
+  <p><strong>Generated:</strong> 13-02-2026-08-07PM</p>
+
+  <div class="summary">
+    <h2>📊 Summary Overview</h2>
+    <table class="summary-table">
+      <tr><th>Metric</th><th>Passed</th><th>Failed</th><th>Total</th></tr>
+      <tr><td><b>Title Match</b></td><td>6</td><td>33</td><td>39</td></tr>
+      <tr><td><b>Description Match</b></td><td>17</td><td>22</td><td>39</td></tr>
+      <tr><td><b>H1 Match</b></td><td>0</td><td>39</td><td>39</td></tr>
+      <tr><td><b>H1 Count (exactly 1)</b></td><td>33</td><td>6</td><td>39</td></tr>
+    </table>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>URL</th>
+        <th>Locale</th>
+        <th>inLanguage</th>
+        <th>Actual Title</th>
+        <th>Schema Name</th>
+        <th class="highlight-col">Title Match</th>
+        <th>Actual Description</th>
+        <th>Schema Description</th>
+        <th class="highlight-col">Description Match</th>
+        <th>Schema Headline</th>
+        <th>Actual H1 Text</th>
+        <th class="highlight-col">H1 Match</th>
+        <th>H1 Count</th>
+      </tr>
+    </thead>
+    <tbody><tr>
+        <td><a href="https://www.anytimefitness.com/en-au" target="_blank">https://www.anytimefitness.com/en-au</a></td>
+        <td>en-au</td>
+        <td>en-AU</td>
+        <td style="background-color:#fff3cd;">Anytime Fitness | Your Local Gym & Fitness Destination</td>
+        <td style="background-color:#fff3cd;">Anytime Fitness Australia | Your Local Gym &amp; Fitness Destination</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">Our gyms and coaches support you in a way no one else can with the best fitness and holistic help inside the gym – and out.</td>
+        <td style="background-color:#fff3cd;">Our gyms and coaches in Australia support you in a way no one else can with the best fitness and holistic help inside the gym – and out.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• find your fitphoria</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/afm-tc" target="_blank">https://www.anytimefitness.com/en-au/afm-tc</a></td>
+        <td>en-au</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Page Not Found - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td ><i>Missing</i></td>
+        <td ><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• 404</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/afm-terms/android" target="_blank">https://www.anytimefitness.com/en-au/afm-terms/android</a></td>
+        <td>en-au</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Page Not Found - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td ><i>Missing</i></td>
+        <td ><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• 404</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/afm-terms/ios" target="_blank">https://www.anytimefitness.com/en-au/afm-terms/ios</a></td>
+        <td>en-au</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Page Not Found - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td ><i>Missing</i></td>
+        <td ><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• 404</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/apple-fitness-offer" target="_blank">https://www.anytimefitness.com/en-au/apple-fitness-offer</a></td>
+        <td>en-au</td>
+        <td>en-AU</td>
+        <td style="background-color:#fff3cd;">Fitness Redefined: Try Anytime Fitness & Apple Fitness+ For Free</td>
+        <td style="background-color:#fff3cd;">Apple Fitness Plus - Free Trial Offer - Anytime Fitness Australia</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">Try Anytime Fitness for free and get an Apple Fitness+ trial subscription on us. That’s thousands of new workouts—from HIIT to Yoga—right at your fingertips.</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• This isn'tFitness as usual.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/apple-fitness-plus-af-members-offer" target="_blank">https://www.anytimefitness.com/en-au/apple-fitness-plus-af-members-offer</a></td>
+        <td>en-au</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Page Not Found - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td ><i>Missing</i></td>
+        <td ><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• 404</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/apple-fitness-plus-subscriber" target="_blank">https://www.anytimefitness.com/en-au/apple-fitness-plus-subscriber</a></td>
+        <td>en-au</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Page Not Found - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td ><i>Missing</i></td>
+        <td ><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• 404</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/canada-privacy" target="_blank">https://www.anytimefitness.com/en-au/canada-privacy</a></td>
+        <td>en-au</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Page Not Found - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td ><i>Missing</i></td>
+        <td ><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• 404</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/club-hub-terms" target="_blank">https://www.anytimefitness.com/en-au/club-hub-terms</a></td>
+        <td>en-au</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Page Not Found - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td ><i>Missing</i></td>
+        <td ><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• 404</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/contact" target="_blank">https://www.anytimefitness.com/en-au/contact</a></td>
+        <td>en-au</td>
+        <td>en-AU</td>
+        <td >Contact Us - Anytime Fitness</td>
+        <td >Contact Us - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;">Get in touch with Anytime Fitness. We'd love to hear from you.</td>
+        <td style="background-color:#fff3cd;">Get in touch with Anytime Fitness. We would love to hear from you</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• We’d love to hear from you</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/corporate-membership" target="_blank">https://www.anytimefitness.com/en-au/corporate-membership</a></td>
+        <td>en-au</td>
+        <td>en-AU</td>
+        <td style="background-color:#fff3cd;">Corporate Membership | Anytime Fitness Australia | 560+ clubs</td>
+        <td style="background-color:#fff3cd;">Corporate Membership - Anytime Fitness Australia</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">Learn about corporate membership options with Anytime Fitness Australia across our gym network spread across the country.</td>
+        <td style="background-color:#fff3cd;">Corporate membership programs for businesses. Get your team fit with Anytime Fitness corporate wellness solutions.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Corporate Membership</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/corporate-membership/thank-you" target="_blank">https://www.anytimefitness.com/en-au/corporate-membership/thank-you</a></td>
+        <td>en-au</td>
+        <td>en-AU</td>
+        <td style="background-color:#fff3cd;">Corporate Membership | Anytime Fitness Australia | 560+ clubs</td>
+        <td style="background-color:#fff3cd;">Thank You - Corporate Membership - Anytime Fitness Australia</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">Learn about corporate membership options with Anytime Fitness Australia across our gym network spread across the country.</td>
+        <td style="background-color:#fff3cd;">Thank you for your interest in Anytime Fitness Australia Corporate Membership. We will be in touch soon.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Corporate Membership</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/dataprivacyrequest" target="_blank">https://www.anytimefitness.com/en-au/dataprivacyrequest</a></td>
+        <td>en-au</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Page Not Found - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td ><i>Missing</i></td>
+        <td ><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• 404</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/email-club" target="_blank">https://www.anytimefitness.com/en-au/email-club</a></td>
+        <td>en-au</td>
+        <td>en-AU</td>
+        <td >Email Club | Anytime Fitness</td>
+        <td >Email Club | Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;">Get in touch with Anytime Fitness. We'd love to hear from you.</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• contact us TRIAL PASS.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/employee-wellness" target="_blank">https://www.anytimefitness.com/en-au/employee-wellness</a></td>
+        <td>en-au</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Page Not Found - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td ><i>Missing</i></td>
+        <td ><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• 404</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/employment" target="_blank">https://www.anytimefitness.com/en-au/employment</a></td>
+        <td>en-au</td>
+        <td>en-AU</td>
+        <td >AF Careers - Anytime Fitness</td>
+        <td >AF Careers - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td >Careers at Anytime Fitness. Join the vibrant community of fitness enthusiasts and passionate professionals at Anytime Fitness.</td>
+        <td >Careers at Anytime Fitness. Join the vibrant community of fitness enthusiasts and passionate professionals at Anytime Fitness.</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Careers atAnytime Fitness.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/events/book-a-tour" target="_blank">https://www.anytimefitness.com/en-au/events/book-a-tour</a></td>
+        <td>en-au</td>
+        <td>en-AU</td>
+        <td style="background-color:#fff3cd;">Book a Tour</td>
+        <td style="background-color:#fff3cd;">Book a Tour - Anytime Fitness Australia</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">Book a free gym tour at Anytime Fitness Australia — explore our 24/7 facilities, meet certified coaches and see how we help you reach your fitness goals.</td>
+        <td style="background-color:#fff3cd;">Book a tour with Anytime Fitness Australia and experience our gyms firsthand. See our facilities, meet our team, and start your fitness journey today.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• EXPERT SUPPORT,  Anytime anywhere.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/events/find-your-fitphoria" target="_blank">https://www.anytimefitness.com/en-au/events/find-your-fitphoria</a></td>
+        <td>en-au</td>
+        <td>en-AU</td>
+        <td style="background-color:#fff3cd;">Find Your Fitphoria</td>
+        <td style="background-color:#fff3cd;">Find Your Fitphoria - Anytime Fitness Australia</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">Discover Find Your Fitphoria with Anytime Fitness Australia — an exclusive event to experience our gyms, meet the community, and kickstart your fitness journey today.</td>
+        <td style="background-color:#fff3cd;">Discover your Fitphoria with Anytime Fitness Australia. Join the movement that helps real people achieve real progress — in fitness, health, and confidence.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Find your Fitphoria<br>• We can’t wait toHelp you get started.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;">2</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/events/promo" target="_blank">https://www.anytimefitness.com/en-au/events/promo</a></td>
+        <td>en-au</td>
+        <td>en-AU</td>
+        <td >Gyms Near Me - Find a Gym - Gym Locator | Anytime Fitness</td>
+        <td >Gyms Near Me - Find a Gym - Gym Locator | Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;">Find an Anytime Fitness gym near you. Members enjoy 24/7 access to thousands of convenient and inviting fitness centre locations worldwide.</td>
+        <td style="background-color:#fff3cd;">Find an Anytime Fitness gym near you. Members enjoy 24/7 access to thousands of convenient and inviting fitness center locations worldwide.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Find a gym near you and book your tour.<br>• Find a local gym near you.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;">2</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/faqs" target="_blank">https://www.anytimefitness.com/en-au/faqs</a></td>
+        <td>en-au</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td ><i>Missing</i></td>
+        <td ><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• How can we help?</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/find-gym" target="_blank">https://www.anytimefitness.com/en-au/find-gym</a></td>
+        <td>en-au</td>
+        <td>en-AU</td>
+        <td >Gyms Near Me - Find a Gym - Gym Locator | Anytime Fitness</td>
+        <td >Gyms Near Me - Find a Gym - Gym Locator | Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;">Find an Anytime Fitness gym near you. Members enjoy 24/7 access to thousands of convenient and inviting fitness centre locations worldwide.</td>
+        <td style="background-color:#fff3cd;">Find an Anytime Fitness gym near you. Members enjoy 24/7 access to thousands of convenient and inviting fitness center locations worldwide.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Find a gym near you and book your tour.<br>• Find a local gym near you.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;">2</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/gdpr" target="_blank">https://www.anytimefitness.com/en-au/gdpr</a></td>
+        <td>en-au</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Page Not Found - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td ><i>Missing</i></td>
+        <td ><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• 404</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/invite" target="_blank">https://www.anytimefitness.com/en-au/invite</a></td>
+        <td>en-au</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Page Not Found - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td ><i>Missing</i></td>
+        <td ><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• 404</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/invite-friend" target="_blank">https://www.anytimefitness.com/en-au/invite-friend</a></td>
+        <td>en-au</td>
+        <td>en-AU</td>
+        <td style="background-color:#fff3cd;">Invite a Friend - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;">Invite Friend - Anytime Fitness Australia</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">Invite a friend to Anytime Fitness and share the journey! Generate your referral link, send a trial pass, and enjoy workouts together. Start inviting today!</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• GIVE YOURSELFA WORKOUT BUDDY</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/locations/sydney-circular-quay-new-south-wales-au-1476" target="_blank">https://www.anytimefitness.com/en-au/locations/sydney-circular-quay-new-south-wales-au-1476</a></td>
+        <td>en-au</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Anytime Fitness - Gym in Sydney Circular Quay, New South Wales, 2000</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;">Visit your 24/7 gym in Sydney Circular Quay, NSW 2000. Enjoy a variety of equipment, personalised plans, and supportive community to reach your fitness goals. Join today!</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Anytime Fitness gym in Sydney Circular Quay</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/memberbenefits" target="_blank">https://www.anytimefitness.com/en-au/memberbenefits</a></td>
+        <td>en-au</td>
+        <td>en-AU</td>
+        <td style="background-color:#fff3cd;">600+ Clubs | 24/7 Access | Anytime Fitness Australia</td>
+        <td style="background-color:#fff3cd;">Member Benefits - Anytime Fitness Australia</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">Discover Purple Perks, the free benefits program from Anytime Fitness Australia. Enjoy exclusive discounts from 40+ top Australian brands.</td>
+        <td style="background-color:#fff3cd;">Discover all the benefits of being an Anytime Fitness member. 24/7 access, personal training, nutrition guidance, and more.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• anytime, anywhere member benefits.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/membership" target="_blank">https://www.anytimefitness.com/en-au/membership</a></td>
+        <td>en-au</td>
+        <td>en-AU</td>
+        <td style="background-color:#fff3cd;">Gym Membership - Fitness Membership | Anytime Fitness</td>
+        <td style="background-color:#fff3cd;">Anytime Fitness Gym Membership - Fitness Membership</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">From personalised fitness plans, expert coaches, and access to more gym locations than anyone else. We’re here for you anytime, anywhere.</td>
+        <td style="background-color:#fff3cd;">Looking for a gym membership with the coaches, tools, and services needed to crush your health goals? Join Anytime Fitness today.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• THE GYM MEMBERSHIP THAT GIVES YOU MORE.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/membership-inquiry" target="_blank">https://www.anytimefitness.com/en-au/membership-inquiry</a></td>
+        <td>en-au</td>
+        <td>en-AU</td>
+        <td style="background-color:#fff3cd;">Membership Inquiry | Anytime Fitness</td>
+        <td style="background-color:#fff3cd;">Membership Inquiry | Anytime Fitness Australia</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">Find your nearest Anytime Fitness gym and connect with a team member. Submit a quick membership inquiry form to explore options and start your fitness journey.</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;"><i>No H1 found</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Both Schema and the Actual Site don't have H1 Text available</span></td>
+        <td style="background-color:#fff3cd;">0</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/offer/local/day-zero-sale-feb26?location_id=AU-1799" target="_blank">https://www.anytimefitness.com/en-au/offer/local/day-zero-sale-feb26?location_id=AU-1799</a></td>
+        <td>en-au</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Anytime Fitness - Gym in Chirnside Park, Victoria, 3116</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;">Visit your 24/7 gym in Chirnside Park, VIC 3116. Enjoy a variety of equipment, personalised plans, and supportive community to reach your fitness goals. Join today!</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Anytime Fitness gym in Chirnside Park</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/own-a-gym" target="_blank">https://www.anytimefitness.com/en-au/own-a-gym</a></td>
+        <td>en-au</td>
+        <td>en-AU</td>
+        <td style="background-color:#fff3cd;">Own a Gym | Franchise Opportunities | Anytime Fitness</td>
+        <td style="background-color:#fff3cd;">Own a Gym - Anytime Fitness Australia</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">Be part of something extraordinary. Choose an Anytime Fitness Australia gym franchise today and join the most powerful fitness movement in Australia.</td>
+        <td style="background-color:#fff3cd;">Start your own Anytime Fitness franchise. Join the world&#39;s largest fitness franchise and build your business with our proven system.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• CHANGE YOUR LIFE, WITH YOUR OWN ANYTIME FITNESS</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/preferred-vendors" target="_blank">https://www.anytimefitness.com/en-au/preferred-vendors</a></td>
+        <td>en-au</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Page Not Found - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td ><i>Missing</i></td>
+        <td ><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• 404</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/press" target="_blank">https://www.anytimefitness.com/en-au/press</a></td>
+        <td>en-au</td>
+        <td>en-AU</td>
+        <td style="background-color:#fff3cd;">Anytime Fitness Press Releases | Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;">See what Anytime Fitness has been up to in the press and news. Discover more about the business and read up on Anytime Fitness press releases here.</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• NewsTRIAL PASS.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/privacy-jp" target="_blank">https://www.anytimefitness.com/en-au/privacy-jp</a></td>
+        <td>en-au</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Page Not Found - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td ><i>Missing</i></td>
+        <td ><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• 404</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/r-u-ok" target="_blank">https://www.anytimefitness.com/en-au/r-u-ok</a></td>
+        <td>en-au</td>
+        <td>en-AU</td>
+        <td style="background-color:#fff3cd;">R U OK? Day | Support Mental Health & Wellbeing | Anytime Fitness</td>
+        <td style="background-color:#fff3cd;">R U OK? - Anytime Fitness Australia</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">Join the R U OK? conversation with Anytime Fitness Australia. Learn how to support mental wellness, access helpful resources, and reach out. Connect today.</td>
+        <td style="background-color:#fff3cd;">Join Anytime Fitness Australia and R U OK? in raising funds and awareness for suicide prevention. A conversation could change a life.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• ANYTIME FITNESS   +  R U OK? tread as one.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/resources/hsa-and-fsa-for-gym-membership" target="_blank">https://www.anytimefitness.com/en-au/resources/hsa-and-fsa-for-gym-membership</a></td>
+        <td>en-au</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Page Not Found - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td ><i>Missing</i></td>
+        <td ><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• 404</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/schedule-an-appointment-online" target="_blank">https://www.anytimefitness.com/en-au/schedule-an-appointment-online</a></td>
+        <td>en-au</td>
+        <td>en-AU</td>
+        <td style="background-color:#fff3cd;">Online Scheduling - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;">Schedule an Appointment Online - Anytime Fitness Australia</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">Book your free consultation at Anytime Fitness. Choose your location, meet a coach, and start your fitness journey today.</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;"><i>No H1 found</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Both Schema and the Actual Site don't have H1 Text available</span></td>
+        <td style="background-color:#fff3cd;">0</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/sitemap" target="_blank">https://www.anytimefitness.com/en-au/sitemap</a></td>
+        <td>en-au</td>
+        <td>en-AU</td>
+        <td style="background-color:#fff3cd;">Sitemap - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;">Sitemap - Anytime Fitness Australia</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">Sitemap Home Try Us Free Company Employee Wellness Careers DMCA Policy Privacy Policy Terms & Conditions Continued Operations, Accessibility and</td>
+        <td style="background-color:#fff3cd;">Sitemap Home Try Us Free Company Employee Wellness Careers DMCA Policy Privacy Policy Terms and Conditions Continued Operations, Accessibility</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Sitemap</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/submit-cancellation-request" target="_blank">https://www.anytimefitness.com/en-au/submit-cancellation-request</a></td>
+        <td>en-au</td>
+        <td>en-AU</td>
+        <td style="background-color:#fff3cd;">Submit Cancellation Request</td>
+        <td style="background-color:#fff3cd;">Anytime Fitness Submit Cancellation Request</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">Submit your Anytime Fitness membership cancellation request online.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Actual Description is not detected on the Actual Site</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;"><i>No H1 found</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Both Schema and the Actual Site don't have H1 Text available</span></td>
+        <td style="background-color:#fff3cd;">0</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/en-au/thank-you" target="_blank">https://www.anytimefitness.com/en-au/thank-you</a></td>
+        <td>en-au</td>
+        <td>en-AU</td>
+        <td >Thank You - Anytime Fitness</td>
+        <td >Thank You - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td >Thank you, your submission was successful.</td>
+        <td >Thank you, your submission was successful.</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• thank you</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr></tbody>
+  </table>
+</body>
+</html>
