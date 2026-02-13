@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Meta vs Schema Comparison - @META-CONTENT-CHECK</title>
+<style>
+  body { font-family: system-ui, Arial; padding: 20px; margin: 0; overflow-x: hidden; }
+  h1, h2 { color: #222; margin: 0 0 10px; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+    table-layout: fixed;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+    font-size: 12px;
+    text-align: left;
+    vertical-align: top;
+    white-space: normal;
+  }
+  th {
+    background: #f3f3f3;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  tr:nth-child(even) { background: #fafafa; }
+  a { color: #1a73e8; text-decoration: none; }
+  td a:hover { text-decoration: underline; }
+
+  th:nth-child(1) { width: 12%; }
+  th:nth-child(2) { width: 4%; }
+  th:nth-child(3) { width: 6%; }
+  th:nth-child(4), th:nth-child(5) { width: 10%; }
+  th:nth-child(6) { width: 7%; }
+  th:nth-child(7), th:nth-child(8) { width: 12%; }
+  th:nth-child(9) { width: 7%; }
+  th:nth-child(10), th:nth-child(11) { width: 10%; }
+  th:nth-child(12) { width: 7%; }
+  th:nth-child(13) { width: 4%; }
+
+  .highlight-col {
+    background-color: #e8f4ff !important;
+    font-weight: 600;
+    border-left: 2px solid #2196f3;
+    border-right: 2px solid #2196f3;
+  }
+
+  .summary {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+  }
+  .summary h2 { margin-top: 0; font-size: 16px; }
+  .summary-table {
+    border-collapse: collapse;
+    width: auto;
+    font-size: 13px;
+    margin-top: 10px;
+  }
+  .summary-table th, .summary-table td {
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    text-align: center;
+  }
+  .summary-table th { background: #eee; }
+
+  @media print {
+    body { zoom: 0.9; }
+  }
+</style>
+</head>
+<body>
+  <h1>Meta, Description & Headline Comparison Report</h1>
+  <p><strong>Generated:</strong> 13-02-2026-04-37PM</p>
+
+  <div class="summary">
+    <h2>📊 Summary Overview</h2>
+    <table class="summary-table">
+      <tr><th>Metric</th><th>Passed</th><th>Failed</th><th>Total</th></tr>
+      <tr><td><b>Title Match</b></td><td>22</td><td>24</td><td>46</td></tr>
+      <tr><td><b>Description Match</b></td><td>19</td><td>27</td><td>46</td></tr>
+      <tr><td><b>H1 Match</b></td><td>0</td><td>46</td><td>46</td></tr>
+      <tr><td><b>H1 Count (exactly 1)</b></td><td>35</td><td>11</td><td>46</td></tr>
+    </table>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>URL</th>
+        <th>Locale</th>
+        <th>inLanguage</th>
+        <th>Actual Title</th>
+        <th>Schema Name</th>
+        <th class="highlight-col">Title Match</th>
+        <th>Actual Description</th>
+        <th>Schema Description</th>
+        <th class="highlight-col">Description Match</th>
+        <th>Schema Headline</th>
+        <th>Actual H1 Text</th>
+        <th class="highlight-col">H1 Match</th>
+        <th>H1 Count</th>
+      </tr>
+    </thead>
+    <tbody><tr>
+        <td><a href="https://www.anytimefitness.com/" target="_blank">https://www.anytimefitness.com/</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td style="background-color:#fff3cd;">Anytime Fitness | Your Local Gym & Fitness Destination</td>
+        <td style="background-color:#fff3cd;">Anytime Fitness | Your Local Gym &amp; Fitness Destination</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td >Our gyms and coaches support you in a way no one else can with the best fitness and holistic help inside the gym – and out.</td>
+        <td >Our gyms and coaches support you in a way no one else can with the best fitness and holistic help inside the gym – and out.</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Anytime, anywhereAnd now with Apple Fitness+</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/afm-tc" target="_blank">https://www.anytimefitness.com/afm-tc</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td >AF Mobile Terms and Conditions - Anytime Fitness</td>
+        <td >AF Mobile Terms and Conditions - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;">Read the AF Mobile Terms and Conditions. Learn how Anytime Fitness handles app use, member responsibilities, and important mobile service policies.</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Terms & Conditions for Anytime Fitness Mobile Application</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/afm-terms/android" target="_blank">https://www.anytimefitness.com/afm-terms/android</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td >AF Mobile Android Terms and Conditions - Anytime Fitness</td>
+        <td >AF Mobile Android Terms and Conditions - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;">Read the Anytime Fitness android App EULA to understand usage terms, licensing, updates, and privacy before installing the app.</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Anytime Fitness Franchisor, LLCEnd User License Agreement<br>• 7. KLAIM PELANGGARAN</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;">2</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/afm-terms/ios" target="_blank">https://www.anytimefitness.com/afm-terms/ios</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td >AF Mobile iOS Terms and Conditions - Anytime Fitness</td>
+        <td >AF Mobile iOS Terms and Conditions - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;">Read the Anytime Fitness iOS App EULA to understand usage terms, licensing, updates, and privacy before installing the app.</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Anytime Fitness Franchisor, LLCEnd User License Agreement<br>• 1. TITOLARITÀ<br>• 2. LICENZA<br>• 3. ESCLUSIONE DI GARANZIE E LIMITAZIONI DI RESPONSABILITÀ<br>• 4. RICONOSCIMENTI ED ESCLUSIONI DI APPLE<br>• 5. DURATA E RISOLUZIONE<br>• 6. INDENNIZZO<br>• 7. AZIONI PER VIOLAZIONI<br>• 8. DISPOSIZIONI GENERALI<br>• 1. OWNERSHIP<br>• 2. LICENSE<br>• 3. DISCLAIMER OF WARRANTIES AND LIMITATIONS ON LIABILITY<br>• 4. ACKNOWLEDGEMENTS AND APPLE DISCLAIMERS<br>• 5. TERM AND TERMINATION<br>• 6. INDEMNIFICATION<br>• 7. INFRINGEMENT CLAIMS<br>• 8. GENERAL<br>• 1.所有權<br>• 2.授權<br>• 3.免責聲明與責任限制<br>• 4.承認事項與 Apple 免責聲明<br>• 5.效期與終止<br>• 6.賠償<br>• 7.侵權索賠<br>• 8.通則<br>• 1. ความเป็นเจ้าของ<br>• 2. สิทธิการใช้งาน<br>• 3. ข้อความปฏิเสธความรับผิดชอบเกี่ยวกับการรับประกันและข้อจำกัดการรับผิด<br>• 5. ระยะเวลาและการสิ้นสุด<br>• 6. การชดเชยค่าเสียหาย<br>• 7. ข้อเรียกร้องเกี่ยวกับการละเมิด<br>• 8. ทั่วไป</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;">32</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/apple-fitness-offer" target="_blank">https://www.anytimefitness.com/apple-fitness-offer</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td style="background-color:#fff3cd;">Fitness Redefined: Try Anytime Fitness & Apple Fitness+ For Free</td>
+        <td style="background-color:#fff3cd;">Apple Fitness Plus - Free Trial Offer - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">Try Anytime Fitness for free and get an Apple Fitness+ trial subscription on us. That’s thousands of new workouts—from HIIT to Yoga—right at your fingertips.</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• This isn'tFitness as usual.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/apple-fitness-plus-af-members-offer" target="_blank">https://www.anytimefitness.com/apple-fitness-plus-af-members-offer</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td style="background-color:#fff3cd;">Apple Fitness+ for Anytime Fitness Members | Anytime Fitness</td>
+        <td style="background-color:#fff3cd;">Apple Fitness Plus - Members Offer - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">Anytime Fitness members get a free subscription to Apple Fitness+, the largest library of fitness and wellness content in the world. Get started today!</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• This isn'tFitness as usual.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/apple-fitness-plus-subscriber" target="_blank">https://www.anytimefitness.com/apple-fitness-plus-subscriber</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td >Apple Fitness Plus - Existing Subscribers - Anytime Fitness</td>
+        <td >Apple Fitness Plus - Existing Subscribers - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;">Try Anytime Fitness for free and get an Apple Fitness+ trial subscription on us. That’s thousands of new workouts—from HIIT to Yoga—right at your fingertips.</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• This isn'tFitness as usual.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/blog" target="_blank">https://www.anytimefitness.com/blog</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td style="background-color:#fff3cd;">Coach Care Connect - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;">Explore the Coach Care Connect Archives for expert fitness tips, workout guides, and wellness advice from Anytime Fitness. Stay motivated today!</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Coach. Care. Connect.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/blog-categories/care" target="_blank">https://www.anytimefitness.com/blog-categories/care</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td style="background-color:#fff3cd;">Care - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;">Receive the care and support you need to thrive. Anytime Fitness is here to help you stay motivated and on track towards your goals.</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Coach. Care. Connect.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/canada-privacy" target="_blank">https://www.anytimefitness.com/canada-privacy</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td >Canada Privacy - Anytime Fitness</td>
+        <td >Canada Privacy - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;">Learn about Canada-specific privacy policy requirements. Understand user rights, legal obligations, and compliance standards for businesses.</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Canada Privacy Policy</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/club-hub-terms" target="_blank">https://www.anytimefitness.com/club-hub-terms</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td style="background-color:#fff3cd;">Club Hub Terms & Conditions | Anytime Fitness</td>
+        <td style="background-color:#fff3cd;">Club Hub Terms and Conditions | Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">Club Hub terms & conditions for Anytime Fitness, LLC.</td>
+        <td style="background-color:#fff3cd;">Club Hub terms and conditions for Anytime Fitness, LLC.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Anytime Fitness® Club Hub Terms and Conditions</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/contact" target="_blank">https://www.anytimefitness.com/contact</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td >Contact Us - Anytime Fitness</td>
+        <td >Contact Us - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;">Get in touch with Anytime Fitness. We'd love to hear from you.</td>
+        <td style="background-color:#fff3cd;">Get in touch with Anytime Fitness. We would love to hear from you.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• We’d love to hear from you</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/corporate-membership" target="_blank">https://www.anytimefitness.com/corporate-membership</a></td>
+        <td>-</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Page Not Found - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td ><i>Missing</i></td>
+        <td ><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• 404</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/corporate-membership/thank-you" target="_blank">https://www.anytimefitness.com/corporate-membership/thank-you</a></td>
+        <td>-</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Page Not Found - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td ><i>Missing</i></td>
+        <td ><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• 404</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/dataprivacyrequest" target="_blank">https://www.anytimefitness.com/dataprivacyrequest</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td >Data Privacy Request - Anytime Fitness</td>
+        <td >Data Privacy Request - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td >Privacy policy for Anytime Fitness, LLC.</td>
+        <td >Privacy policy for Anytime Fitness, LLC.</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Data Privacy Request</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/email-club" target="_blank">https://www.anytimefitness.com/email-club</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td >Email Club | Anytime Fitness</td>
+        <td >Email Club | Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;">Get in touch with Anytime Fitness. We'd love to hear from you.</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• contact us TRIAL PASS.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/employee-wellness" target="_blank">https://www.anytimefitness.com/employee-wellness</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td >Employee Wellness - Anytime Fitness</td>
+        <td >Employee Wellness - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;">Employee wellness and workplace wellness with a dash of "can-do" spirit. At Anytime Fitness, in partnership with Healthy Contributions, we know that</td>
+        <td style="background-color:#fff3cd;">Employee wellness and workplace wellness with a dash of can-do spirit. At Anytime Fitness, in partnership with Healthy Contributions, we know that</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Employee wellness and workplace wellness with a dash of “can-do” spirit.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/employment" target="_blank">https://www.anytimefitness.com/employment</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td >AF Careers - Anytime Fitness</td>
+        <td >AF Careers - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;">Careers at Anytime Fitness. Join the vibrant community of fitness enthusiasts and passionate professionals at Anytime Fitness.</td>
+        <td style="background-color:#fff3cd;">Careers at Anytime Fitness. Join the vibrant community of fitness enthusiasts and passionate professionals at Anytime Fitness. Whether you’re seeking a</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Careers atAnytime Fitness.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/events/free-trial" target="_blank">https://www.anytimefitness.com/events/free-trial</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td style="background-color:#fff3cd;">Free Trial</td>
+        <td style="background-color:#fff3cd;">Try Us Free - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">Personalized support. anytime, anywhere. find a gym near you to get your free trial pass Get more for your membership than machines 24/7 secure access to</td>
+        <td style="background-color:#fff3cd;">Personalized support. anytime, anywhere. find a gym near you to get your free trial pass Get more for your membership than machines 24/7 secure access</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• PERSONALIZED SUPPORT.ANYTIME, ANYWHERE.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/events/join-online" target="_blank">https://www.anytimefitness.com/events/join-online</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td >Online Sign Up - Anytime Fitness</td>
+        <td >Online Sign Up - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;">Join Anytime Fitness online today—get access to 24/7 gyms, expert coaching, and support. Start your fitness journey now!</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Sign up for yourmembership online now<br>• Prioritize your best self andstart today.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;">2</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/events/promo" target="_blank">https://www.anytimefitness.com/events/promo</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td >Gyms Near Me - Find a Gym - Gym Locator | Anytime Fitness</td>
+        <td >Gyms Near Me - Find a Gym - Gym Locator | Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td >Find an Anytime Fitness gym near you. Members enjoy 24/7 access to thousands of convenient and inviting fitness center locations worldwide.</td>
+        <td >Find an Anytime Fitness gym near you. Members enjoy 24/7 access to thousands of convenient and inviting fitness center locations worldwide.</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Find a gym near you and get your free pass.<br>• Find a local gym near you.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;">2</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/events/train-for-your-life" target="_blank">https://www.anytimefitness.com/events/train-for-your-life</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td style="background-color:#fff3cd;">Train for Your Life</td>
+        <td style="background-color:#fff3cd;">Train for Your Life - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td >Where real people help you make real progress. Get personalized training, nutrition, and recovery support from expert Coaches. Anytime, anywhere.</td>
+        <td >Where real people help you make real progress. Get personalized training, nutrition, and recovery support from expert Coaches. Anytime, anywhere.</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• All You need for a Stronger You. Be Strong. Feel Stronger.<br>• We can’t wait toHelp you get started.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;">2</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/faqs" target="_blank">https://www.anytimefitness.com/faqs</a></td>
+        <td>-</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Frequently Asked Questions | Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;">Frequently Asked Questions (FAQs): Get answers to the most common questions about Anytime Fitness gyms and memberships. Read more.</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• FAQs</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/find-gym" target="_blank">https://www.anytimefitness.com/find-gym</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td >Gyms Near Me - Find a Gym - Gym Locator | Anytime Fitness</td>
+        <td >Gyms Near Me - Find a Gym - Gym Locator | Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td >Find an Anytime Fitness gym near you. Members enjoy 24/7 access to thousands of convenient and inviting fitness center locations worldwide.</td>
+        <td >Find an Anytime Fitness gym near you. Members enjoy 24/7 access to thousands of convenient and inviting fitness center locations worldwide.</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Find a gym near you and get your free pass.<br>• Find a local gym near you.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;">2</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/gdpr" target="_blank">https://www.anytimefitness.com/gdpr</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td >GDPR - Anytime Fitness</td>
+        <td >GDPR - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td >We want you to have information concerning how our app uses your personal information so that you can make informed decisions concerning data privacy.</td>
+        <td >We want you to have information concerning how our app uses your personal information so that you can make informed decisions concerning data privacy.</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Privacy Policy and Terms of Use</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/invite" target="_blank">https://www.anytimefitness.com/invite</a></td>
+        <td>-</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Page Not Found - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td ><i>Missing</i></td>
+        <td ><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• 404</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/invite-friend" target="_blank">https://www.anytimefitness.com/invite-friend</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td >Invite Friend - Anytime Fitness</td>
+        <td >Invite Friend - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;">Invite a friend to Anytime Fitness and share the journey! Generate your referral link, send a trial pass, and enjoy workouts together. Start inviting today!</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• GIVE YOURSELFA WORKOUT BUDDY</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/locations" target="_blank">https://www.anytimefitness.com/locations</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td >All Gym Locations - Anytime Fitness</td>
+        <td >All Gym Locations - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td >Find all Anytime Fitness locations by country and state.</td>
+        <td >Find all Anytime Fitness locations by country and state.</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• All Locations</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/locations/pasadena-california-4335" target="_blank">https://www.anytimefitness.com/locations/pasadena-california-4335</a></td>
+        <td>-</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Anytime Fitness - Gym in Pasadena, California, 91101</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;">Visit your 24/7 gym in Pasadena, CA 91101. Enjoy a variety of equipment, personalized plans, and supportive community to reach your fitness goals. Join today!</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Anytime Fitness gym in Pasadena</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/membership" target="_blank">https://www.anytimefitness.com/membership</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td style="background-color:#fff3cd;">Gym Membership - Fitness Membership | Anytime Fitness</td>
+        <td style="background-color:#fff3cd;">Anytime Fitness Gym Membership - Fitness Membership</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">From personalized fitness plans, expert coaches, and access to more gym locations than anyone else. We’re here for you anytime, anywhere.</td>
+        <td style="background-color:#fff3cd;">Looking for a gym membership with the coaches, tools, and services needed to crush your health goals? Join Anytime Fitness today.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• The Gym MembershipThat Gives You More.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/membership-inquiry" target="_blank">https://www.anytimefitness.com/membership-inquiry</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td >Membership Inquiry | Anytime Fitness</td>
+        <td >Membership Inquiry | Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;">Find your nearest Anytime Fitness gym and connect with a team member. Submit a quick membership inquiry form to explore options and start your fitness journey.</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;"><i>No H1 found</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Both Schema and the Actual Site don't have H1 Text available</span></td>
+        <td style="background-color:#fff3cd;">0</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/offer/group/join-for-one-dollar-offer" target="_blank">https://www.anytimefitness.com/offer/group/join-for-one-dollar-offer</a></td>
+        <td>-</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Join for $1</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td ><i>Missing</i></td>
+        <td ><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Join for $1</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/offer/local/join-for-1-dollar?club=4936" target="_blank">https://www.anytimefitness.com/offer/local/join-for-1-dollar?club=4936</a></td>
+        <td>-</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Local Offer - Join for $1 - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td ><i>Missing</i></td>
+        <td ><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Join for $1</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/own-a-gym" target="_blank">https://www.anytimefitness.com/own-a-gym</a></td>
+        <td>-</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Page Not Found - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td ><i>Missing</i></td>
+        <td ><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• 404</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/preferred-vendors" target="_blank">https://www.anytimefitness.com/preferred-vendors</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td style="background-color:#fff3cd;">Preferred Vendors</td>
+        <td style="background-color:#fff3cd;">Preferred Vendors - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">Apply to be a Preferred Vendor for Anytime Fitness. Showcase your value, submit your proposal, and help elevate our brand.</td>
+        <td style="background-color:#fff3cd;">Preferred vendors are an extension of our brand. We seek partners that can enhance our business model.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Preferred Vendors: An Extension of Our Brand</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/privacy-jp" target="_blank">https://www.anytimefitness.com/privacy-jp</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td style="background-color:#fff3cd;">Japan's Privacy Policy | Anytime Fitness</td>
+        <td style="background-color:#fff3cd;">Japan Privacy Policy | Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td >Website Terms of Use for Anytime Fitness, LLC.</td>
+        <td >Website Terms of Use for Anytime Fitness, LLC.</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• エニタイムフィットネス プライバシー告知</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/resources/hsa-and-fsa-for-gym-membership" target="_blank">https://www.anytimefitness.com/resources/hsa-and-fsa-for-gym-membership</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td style="background-color:#fff3cd;">Can You Use Your HSA/FSA For A Gym Membership?</td>
+        <td style="background-color:#fff3cd;">HSA/FSA Gym Memberships - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">Can you use your HSA or FSA for a gym membership? With Anytime Fitness and Dr. B, the answer could be yes. Learn how to determine your eligibility and save.</td>
+        <td style="background-color:#fff3cd;">Discover how you can use HSA/FSA funds for your Anytime Fitness gym membership, personal training, and wellness programs.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Use Your HSA or FSA for a Gym Membership.</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/schedule-an-appointment-online" target="_blank">https://www.anytimefitness.com/schedule-an-appointment-online</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td style="background-color:#fff3cd;">Online Scheduling - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;">Schedule an Appointment Online - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">Book your free consultation at Anytime Fitness. Choose your location, meet a coach, and start your fitness journey today.</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;"><i>No H1 found</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Both Schema and the Actual Site don't have H1 Text available</span></td>
+        <td style="background-color:#fff3cd;">0</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/sitemap" target="_blank">https://www.anytimefitness.com/sitemap</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td >Sitemap - Anytime Fitness</td>
+        <td >Sitemap - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;">Sitemap Home Try Us Free Company Employee Wellness Careers DMCA Policy Privacy Policy Terms & Conditions Continued Operations, Accessibility and</td>
+        <td style="background-color:#fff3cd;">Sitemap Home Try Us Free Company Employee Wellness Careers DMCA Policy Privacy Policy Terms and Conditions Continued Operations, Accessibility and</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Sitemap</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/submit-cancellation-request" target="_blank">https://www.anytimefitness.com/submit-cancellation-request</a></td>
+        <td>-</td>
+        <td>-</td>
+        <td style="background-color:#fff3cd;">Page Not Found - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Title is not detected on the Organizational Schema</span></td>
+        <td ><i>Missing</i></td>
+        <td ><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• 404</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/thank-you" target="_blank">https://www.anytimefitness.com/thank-you</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td >Thank You - Anytime Fitness</td>
+        <td >Thank You - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td >Thank you, your submission was successful.</td>
+        <td >Thank you, your submission was successful.</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• thank you</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/training" target="_blank">https://www.anytimefitness.com/training</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td style="background-color:#fff3cd;">Training - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;">Personal Training and Group Training Workouts | Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;">Empower your fitness journey with AF TRAINING Take your fitness journey to the next level with personalized training support, guidance, and technology.</td>
+        <td style="background-color:#fff3cd;">Coach-led Personal and Group Fitness Training Designed to help you reach your own individual goals. Our coaches lead group and one-on-one workouts that</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• empower your fitness journeywith AF TRAINING</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/training/fitness-consultation" target="_blank">https://www.anytimefitness.com/training/fitness-consultation</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td >Fitness Consultation - Anytime Fitness</td>
+        <td >Fitness Consultation - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td >Fitness Consultation Get Started Right A new membership with Anytime Fitness includes a free fitness consultation to get you started on the right foot.</td>
+        <td >Fitness Consultation Get Started Right A new membership with Anytime Fitness includes a free fitness consultation to get you started on the right foot.</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;"><i>No H1 found</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Both Schema and the Actual Site don't have H1 Text available</span></td>
+        <td style="background-color:#fff3cd;">0</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/training/group-training" target="_blank">https://www.anytimefitness.com/training/group-training</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td >Group Workouts - Anytime Fitness</td>
+        <td >Group Workouts - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td >Group Workouts Victory Loves Company Workouts using the energy of a small group or team of people around you and the expertise of the coach to maximize</td>
+        <td >Group Workouts Victory Loves Company Workouts using the energy of a small group or team of people around you and the expertise of the coach to maximize</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;"><i>No H1 found</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Both Schema and the Actual Site don't have H1 Text available</span></td>
+        <td style="background-color:#fff3cd;">0</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/training/personal-training" target="_blank">https://www.anytimefitness.com/training/personal-training</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td style="background-color:#fff3cd;">Personal Training - Anytime Fitness</td>
+        <td style="background-color:#fff3cd;">One-on-One Training - Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch</span></td>
+        <td >Personal Training Stronger Together Whether you’re new to exercising or a fitness pro, we’re here to provide you with personalized coaching and support</td>
+        <td >Personal Training Stronger Together Whether you’re new to exercising or a fitness pro, we’re here to provide you with personalized coaching and support</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;"><i>No H1 found</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Both Schema and the Actual Site don't have H1 Text available</span></td>
+        <td style="background-color:#fff3cd;">0</td>
+      </tr>
+<tr>
+        <td><a href="https://www.anytimefitness.com/try-us-free" target="_blank">https://www.anytimefitness.com/try-us-free</a></td>
+        <td>-</td>
+        <td>en-US</td>
+        <td >Try Us For Free | Anytime Fitness</td>
+        <td >Try Us For Free | Anytime Fitness</td>
+        <td class="highlight-col"><span style="color:#2e7d32;font-weight:bold;">✅ Match</span></td>
+        <td style="background-color:#fff3cd;">Try Anytime Fitness free for 7 days! Find a club near you by searching city, state, or zip code. Experience our gyms, classes, and community—sign up today!</td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema Description is not detected on the Organizational Schema</span></td>
+        <td style="background-color:#fff3cd;"><i>Missing</i></td>
+        <td style="background-color:#fff3cd;">• Claim Your FREE Pass</td>
+        <td class="highlight-col"><span style="color:#d32f2f;font-weight:bold;">⚠️ Mismatch - Schema H1 Text is not detected on the Organizational Schema</span></td>
+        <td >1</td>
+      </tr></tbody>
+  </table>
+</body>
+</html>
